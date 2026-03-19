@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Love ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    width: 90%;
+    max-width: 380px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: fadeIn 2s ease-in-out;
+    position: relative;
+    z-index: 2;
+}
+
+img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ff4d6d;
+}
+
+h1 {
+    color: #ff4d6d;
+    font-size: 24px;
+}
+
+#typing {
+    color: #444;
+    font-size: 15px;
+    margin-top: 10px;
+    min-height: 80px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 18px;
+    border: none;
+    background: #ff4d6d;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+    margin-top: 10px;
+    color: #ff4d6d;
+    font-weight: bold;
+}
+
+/* Confetti */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: red;
+    top: -10px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+
+<div class="container">
+    <img src="your-photo.jpg" alt="My Love">
+    <h1>Happy Birthday, My Arslan My Husband My Love Of Life ♥️💋</h1>
+
+    <div id="typing"></div>
+
+    <button onclick="showMessage()">Click for Surprise 🎁</button>
+    <div class="hidden"             id="msg">I MISS YOU SO MUCH 🥺♥️ I am  so grateful to have you in my life to have a life partner like you ALHUMDULILLAH 🥺♥️🌍✨😘💐💋</div>
+</div>
+
+<script>
+// Typing effect
+const text = "You are the most special person of my life 🥺♥️. Even though we are far apart, my heart is always with you. I love you more than words can ever express, My Love My Everything My Arslan 🥺😘♥️ ";
+let i = 0;
+
+function typeWriter() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 40);
+    }
+}
+typeWriter();
+
+// Surprise button
+function showMessage() {
+    document.getElementById("msg").style.display = "block";
+}
+
+// Confetti
+for (let i = 0; i < 50; i++) {
+    let conf = document.createElement("div");
+    conf.className = "confetti";
+    conf.style.left = Math.random() * 100 + "vw";
+    conf.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    conf.style.backgroundColor = ["#ff4d6d", "#ff9a9e", "#fad0c4"][Math.floor(Math.random()*3)];
+    document.body.appendChild(conf);
+}
+</script>
+
+</body>
+</html>
